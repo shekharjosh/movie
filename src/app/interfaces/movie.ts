@@ -37,7 +37,6 @@ interface IMovie {
     date_uploaded: string;
     date_uploaded_unix: number;
 }
-
 interface ITorrent {
     url: string;
     hash: string;
