@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { MovieService } from '../../services/movie.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { MovieService } from '../../services/movie.service';
 export class MovieDetailComponent implements OnInit {
   title = "Movie Detail";
   movie: any;
+  subscription?: Subscription;
 
   constructor(
     private _route: ActivatedRoute,
@@ -18,11 +20,18 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.selectedMovie();
+    //this.getMovieDetail();
   }
 
   selectedMovie() {
     const movieId = this._route.snapshot.paramMap.get('id');
-    this._movieService.getMovieById(movieId)
+    this.subscription = this._movieService.getMovieById(movieId)
       .subscribe( data => this.movie = data.data.movie)
   }
+
+  //BehaviorSubject
+  // getMovieDetail() {
+  //   this.subscription = this._movieService.getMovieDetail()
+  //     .subscribe(data => this.movie = data)
+  // }
 }

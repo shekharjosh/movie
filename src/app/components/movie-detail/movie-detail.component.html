@@ -1,10 +1,11 @@
 <section class="movie-detail">
     <nav>
         <ul>
-            <li><a routerLink="/movie-listing">Movie Listing</a></li>
+            <li><a routerLink="/movie-listing">Back to Movie Listing Page</a></li>
         </ul>
     </nav>
     <h2>{{ title }}</h2>
+    <div *ngIf="!subscription?.closed"><mat-progress-bar mode="indeterminate"></mat-progress-bar></div>
     <mat-card class="movie-detail-card">
         <img mat-card-image src={{movie.large_cover_image}} alt="" />
         <mat-card-content>
