@@ -1,1 +1,14 @@
-<p>movie-detail works!</p>
+<section class="movie-detail">
+    <nav>
+        <ul>
+            <li><a routerLink="/movie-listing">Movie Listing</a></li>
+        </ul>
+    </nav>
+    <h2>{{ title }}</h2>
+    <mat-card class="movie-detail-card">
+        <img mat-card-image src={{movie.large_cover_image}} alt="" />
+        <mat-card-content>
+            <p>{{ movie.description_full }}</p>
+        </mat-card-content>
+    </mat-card>
+</section>

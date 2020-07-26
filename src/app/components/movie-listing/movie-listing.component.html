@@ -1,6 +1,7 @@
+<section class="movie-list">
 <h2>{{ title }}</h2>
-<mat-card class="movie-card" *ngFor="let movie of movies">
-    <a routerLink="/movie-detail">
+<mat-card class="movie-list-card" *ngFor="let movie of movies">
+    <a routerLink="/movie-detail/{{movie.id}}">
         <mat-card-header>
             <mat-card-title>
                 {{ movie.title | uppercase }}
@@ -8,3 +9,4 @@
         </mat-card-header>
     </a>
 </mat-card>
+</section>

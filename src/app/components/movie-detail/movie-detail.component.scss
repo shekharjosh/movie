@@ -1,0 +1,19 @@
+.movie-detail {
+    margin: auto 10%;
+    nav {
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    &-card {
+        width: 500px;
+    }
+}
